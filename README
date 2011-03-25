@@ -1,0 +1,5 @@
+Extremely simple ASP.NET MVC 3 app showing off Massive created by Rob Conery.  
+
+Uses a Comment table in SQL Server.  Create table script provided in Scripts folder.  
+
+Presents 3 scenarios.  Create (New Comment), Read (List all comments) Delete, delete an existing Comment.

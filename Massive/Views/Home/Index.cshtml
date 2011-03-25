@@ -1,0 +1,80 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Comments</h2>
+
+<table>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Message
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Cool
+        </th>
+        <th>
+            Created On
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Id
+        </td>
+        <td>
+            @item.Message
+        </td>
+        <td>
+            @item.Age
+        </td>
+        <td>
+            @item.Cool
+        </td>
+        <td>
+            @item.CreatedOn
+        </td>
+        <td>
+        @using (Html.BeginForm("Delete", "Home", new { id = item.Id }))
+        {
+            <input type="submit" value="delete" />
+        }
+        </td>
+    </tr>
+}
+
+</table>
+
+<h2>Add</h2>
+
+<form action="/" method="post"">
+
+<table>
+    <tr>
+        <td>Message:</td>
+        <td><input type="text" id="message" name="message" /></td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td><input type="text" id="age" name="age" /></td>
+    </tr>
+    <tr>
+        <td>Are You Cool?:</td>
+        <td>@Html.CheckBox("cool")</td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Add" /></td>
+    </tr>
+</table>
+
+</form>
+
